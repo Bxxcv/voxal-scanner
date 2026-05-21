@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOCXAL Security Scanner | Premium Vulnerability Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/premium.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>VOCXAL<span class="highlight">Scanner</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#" id="darkModeToggle"><i class="fas fa-moon"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="VOCXAL Security Scanner">VOCXAL Security Scanner</h1>
+            <p class="subtitle">Advanced vulnerability detection & exploitation framework</p>
+            <div class="stats-container">
+                <div class="stat">
+                    <span class="stat-number" id="scansCount">0</span>
+                    <span class="stat-label">Scans Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="vulnsFound">0</span>
+                    <span class="stat-label">Vulnerabilities Found</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="activeUsers">0</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="scanner-section">
+        <div class="scanner-card">
+            <div class="card-header">
+                <i class="fas fa-search"></i>
+                <h2>Start Vulnerability Scan</h2>
+            </div>
+            <div class="scanner-form">
+                <div class="input-group">
+                    <input type="url" id="targetUrl" placeholder="https://example.com" required>
+                    <i class="fas fa-link input-icon"></i>
+                </div>
+                
+                <div class="scan-options">
+                    <h3>Scan Modules</h3>
+                    <div class="options-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scan-module" value="sqli" checked>
+                            <span>SQL Injection</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scan-module" value="xss" checked>
+                            <span>XSS</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scan-module" value="lfi" checked>
+                            <span>LFI/RFI</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scan-module" value="admin" checked>
+                            <span>Admin Finder</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scan-module" value="port" checked>
+                            <span>Port Scanner</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="scan-module" value="cms" checked>
+                            <span>CMS Detector</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button id="startScan" class="scan-btn">
+                    <i class="fas fa-rocket"></i>
+                    Start Deep Scan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <h2>Premium Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-database"></i>
+                <h3>SQL Injection</h3>
+                <p>Time-based, Boolean, Union-based detection</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-code"></i>
+                <h3>XSS Scanner</h3>
+                <p>Reflected, Stored, DOM-based XSS</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-folder-open"></i>
+                <h3>LFI/RFI</h3>
+                <p>Local & Remote File Inclusion</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-key"></i>
+                <h3>Admin Panel</h3>
+                <p>Automatic admin finder & bruteforce</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="scanModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Scanning in Progress</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="scan-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div id="scanLog" class="scan-log"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/scanner.js"></script>
+    <script src="js/api-handler.js"></script>
+</body>
+</html>
