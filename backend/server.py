@@ -10,8 +10,9 @@ import threading
 import json
 import os
 import time
-from scanner_engine import VulnerabilityScanner
-
+import importlib
+scanner_engine = importlib.import_module('scanner-engine')
+VulnerabilityScanner = scanner_engine.VulnerabilityScanner
 app = Flask(__name__)
 app.secret_key = "voxal_bypass_2024"
 CORS(app)
